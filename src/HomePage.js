@@ -79,12 +79,14 @@ function HomePage() {
             className="hero-text"
             style={{
               display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-start",
-              flex: 1,
+              flexDirection: "row",
+              justifyContent: "flex-start", // content stays left
+              alignItems: "center", // vertical center
+              minHeight: "80vh", // fill most of viewport height
+              width: "100%",
             }}
           >
-            <div>
+            <div style={{ width: "100%", maxWidth: 600, marginLeft: "0" }}>
               <h1>Alpha Edge North America</h1>
               <p className="hero-subheading">The Capital Allocation Exchange</p>
               <hr style={{ borderTop: "2px solid #fff" }} />
@@ -176,7 +178,7 @@ function HomePage() {
         </p>
 
         <div style={{ marginTop: "4rem" }}>
-          <h2 className="fw-bold" style={{ marginBottom: "2rem" }}>
+          <h2 style={{ marginBottom: "2rem" }}>
             Advisory Board
           </h2>
           <div
