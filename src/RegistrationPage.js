@@ -59,7 +59,7 @@ function RegistrationPage() {
                 })}
                 end
               >
-                Homepage
+                HOMEPAGE
               </NavLink>
             </li>
             <li>
@@ -72,7 +72,7 @@ function RegistrationPage() {
                   borderBottom: isActive ? "2px solid #000" : "none",
                 })}
               >
-                Venue
+                VENUE
               </NavLink>
             </li>
             <li>
@@ -85,7 +85,7 @@ function RegistrationPage() {
                   borderBottom: isActive ? "2px solid #000" : "none",
                 })}
               >
-                Registration
+                REGISTRATION
               </NavLink>
             </li>
           </ul>

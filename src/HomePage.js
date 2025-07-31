@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "./images/II_Logotype_Left-aligned_White_RGB.png";
 
 function HomePage() {
   return (
@@ -20,10 +21,15 @@ function HomePage() {
             style={{
               position: "absolute",
               top: "2.5rem",
+              left: "3rem",
               right: "3rem",
               zIndex: 2,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between", // Add this line
             }}
           >
+            <img src={logo} alt="Logo" style={{ height: "40px" }} />
             <ul
               style={{
                 listStyle: "none",
@@ -31,6 +37,7 @@ function HomePage() {
                 gap: "1.5rem",
                 margin: 0,
                 padding: 0,
+                alignItems: "center",
               }}
             >
               <li>
@@ -44,7 +51,7 @@ function HomePage() {
                   })}
                   end
                 >
-                  Homepage
+                  HOMEPAGE
                 </NavLink>
               </li>
               <li>
@@ -57,7 +64,7 @@ function HomePage() {
                     borderBottom: isActive ? "2px solid #fff" : "none",
                   })}
                 >
-                  Venue
+                  VENUE
                 </NavLink>
               </li>
               <li>
@@ -70,7 +77,7 @@ function HomePage() {
                     borderBottom: isActive ? "2px solid #fff" : "none",
                   })}
                 >
-                  Registration
+                  REGISTRATION
                 </NavLink>
               </li>
             </ul>
@@ -98,11 +105,9 @@ function HomePage() {
                 }}
               >
                 <div style={{ flex: 1 }}>
-                  <h3>Date</h3>
                   <p>September 15, 2024</p>
                 </div>
                 <div style={{ flex: 1 }}>
-                  <h3>Venue</h3>
                   <p>Grand Convention Center, New York, NY</p>
                 </div>
               </div>
@@ -178,9 +183,7 @@ function HomePage() {
         </p>
 
         <div style={{ marginTop: "4rem" }}>
-          <h2 style={{ marginBottom: "2rem" }}>
-            Advisory Board
-          </h2>
+          <h2 style={{ marginBottom: "2rem" }}>Advisory Board</h2>
           <div
             style={{
               display: "flex",

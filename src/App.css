@@ -1,8 +1,17 @@
 /* Add this at the top of your CSS file or in a global stylesheet */
 @font-face {
-  font-family: 'FS Kim';
+  font-family: 'FS Kim Medium';
   src: url('./fonts/FS_Kim/Medium/fs_kim_medium.woff2') format('woff2'),
     url('./fonts/FS_Kim/Medium/fs_kim_medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Messina Sans Regular';
+  src: url('./fonts/Messina/MessinaSans_Regular/MessinaSansWeb-Regular.woff2') format('woff2'),
+    url('./fonts/Messina/MessinaSans_Regular/MessinaSansWeb-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -12,6 +21,7 @@
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  font-family: 'Messina Sans Regular', sans-serif;
 }
 
 .hero-section {
@@ -49,11 +59,11 @@
 .hero-text h1 {
   font-size: 60px;
   margin-bottom: 1rem;
-  font-family: 'FS Kim', sans-serif;
+  font-family: 'FS Kim Medium', sans-serif;
 }
 
 h2, h1 {
-  font-family: 'FS Kim', sans-serif;
+  font-family: 'FS Kim Medium', sans-serif;
 }
 
 .hero-text .hero-subheading {
