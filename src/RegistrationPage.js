@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo } from "./images/II_logotype_left-aligned_black.svg";
 
-function VenuePage() {
+function RegistrationPage() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    organization: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <div className="page-container">
       <section className="venue" style={{ position: "relative" }}>
@@ -66,7 +82,7 @@ function VenuePage() {
                   color: "#000",
                   textDecoration: "none",
                   fontWeight: "bold",
-                  borderBottom: isActive ? "2px solid #fff" : "none",
+                  borderBottom: isActive ? "2px solid #000" : "none",
                 })}
               >
                 Registration
@@ -76,39 +92,61 @@ function VenuePage() {
         </nav>
       </section>
 
-      <div className="container py-5" style={{ marginTop: "100px" }}>
-        <h1 className="mb-4">Venue</h1>
-        <div style={{ display: "flex", gap: "2rem", alignItems: "flex-start" }}>
-          {/* Left column: Location details */}
-          <div style={{ flex: 1 }}>
-            <p>
-              <strong>Grand Convention Center</strong>
-              <br />
-              123 Main Street, New York, NY
-            </p>
-            <p>
-              The Grand Convention Center is located in the heart of New York
-              City, offering state-of-the-art facilities and amenities for our
-              event attendees.
-            </p>
+      <div className="container py-5" style={{ maxWidth: 500, marginTop: "100px" }}>
+        <h1 className="mb-4">Registration</h1>
+        {submitted ? (
+          <div className="alert alert-success">
+            Thank you for registering, {form.name}!
           </div>
-          {/* Right column: Google Maps */}
-          <div style={{ flex: 1 }}>
-            <iframe
-              title="Grand Convention Center Map"
-              src="https://www.google.com/maps?q=123+Main+Street,+New+York,+NY&output=embed"
-              width="100%"
-              height="300"
-              style={{ border: 0, borderRadius: "8px" }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                className="form-control"
+                value={form.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                className="form-control"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="organization" className="form-label">
+                Organization
+              </label>
+              <input
+                id="organization"
+                name="organization"
+                className="form-control"
+                value={form.organization}
+                onChange={handleChange}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary w-100">
+              Register
+            </button>
+          </form>
+        )}
       </div>
     </div>
   );
 }
 
-export default VenuePage;
+export default RegistrationPage;
